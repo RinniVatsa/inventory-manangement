@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import ProductList from "./components /ProductList";
+import Cart from "./components /Cart";
+import { Provider } from "react-redux";
+import { store } from "./redux /store";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+
+
+
+
+
+
+
+
+        <
+        Provider store = { store } >
+        <
+        Router >
+        <
+        div className = "p-4 bg-gray-200" >
+        <
+        nav className = "mb-4" >
+        <
+        Link to = "/"
+        className = "mr-4 text-blue-600" > Home < /Link> <
+        Link to = "/cart"
+        className = "text-blue-600" > Cart < /Link> < /
+        nav > <
+        Routes >
+        <
+        Route path = "/"
+        element = { < ProductList / > }
+        /> <
+        Route path = "/cart"
+        element = { < Cart / > }
+        /> < /
+        Routes > <
+        /div> < /
+        Router > <
+        /Provider>
+
+    );
+
 }
 
 export default App;
